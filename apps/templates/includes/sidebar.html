@@ -47,7 +47,38 @@
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="/index.html">
-											<span class="sub-item">Dashboard</span>
+											<span class="sub-item">Public View</span>
+										</a>
+									</li>
+									<li>
+										<a href="/layout-sidebar-style-1.html">
+											<span class="sub-item">Company View</span>
+										</a>
+									</li>
+									<li>
+										<a href="/layout-sidebar-style-1.html">
+											<span class="sub-item">Regulator View</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item {% if 'tables' in segment %} active {% endif %}">
+							<a data-toggle="collapse" href="#tables">
+								<i class="fas fa-table"></i>
+								<p>Tables</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse {% if 'tables-' in segment %} show {% endif %}" id="tables">
+								<ul class="nav nav-collapse">
+									<li class="{% if 'tables-simple' in segment %} active {% endif %}">
+										<a href="/tables-simple.html">
+											<span class="sub-item">Basic Table</span>
+										</a>
+									</li>
+									<li class="{% if 'tables-data' in segment %} active {% endif %}">
+										<a href="/tables-data.html">
+											<span class="sub-item">Datatables</span>
 										</a>
 									</li>
 								</ul>
@@ -288,22 +319,22 @@
 								</ul>
 							</div>
 						</li>
-						<li class="mx-4 mt-2">
+						<!--<li class="mx-4 mt-2">
                             <a target="_blank"
                                href="https://appseed.us/admin-dashboards/flask-dashboard-atlantis-dark-pro" 
                                class="btn btn-danger btn-block">
                                 <span class="btn-label mr-2"> <i class="fa fa-rocket"></i> </span>PRO Version</a> 
 						</li>
-					</ul>
+					</ul>-->
 				{% else %}
-					<ul class="nav nav-primary">
+					<!--<ul class="nav nav-primary">
 						<li class="mx-4 mt-2">
                             <a target="_blank"
                                href="https://appseed.us/admin-dashboards/flask-dashboard-atlantis-dark-pro" 
                                class="btn btn-danger btn-block">
                                 <span class="btn-label mr-2"> <i class="fa fa-rocket"></i> </span>PRO Version</a> 
 						</li>
-					</ul>
+					</ul>-->
 				{% endif %}	
 				</div>
 			</div>
