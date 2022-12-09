@@ -4,10 +4,12 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from apps.home import blueprint
-from flask import render_template, request
+from flask import render_template, request, redirect
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 from apps.authentication.models import Users
+from apps.home.models import Entries
+from apps import db
 
 
 @blueprint.route('/index')
@@ -16,6 +18,29 @@ def index():
 
     return render_template('home/index.html', segment='index')
 
+@blueprint.route('/createEntry', methods=['GET', 'POST'])
+@login_required
+def createEntry():
+    if request.method == 'POST':
+        print("update db")
+        print(request.form)
+        year = request.form['year']
+        manufactured = request.form['manufactured']
+        acquired = request.form['acquired']
+        imported = request.form['imported']
+        recycled = request.form['recycled']
+        transferred = request.form['transferred']
+        exported = request.form['exported']
+        untracked = request.form['untracked']
+        new_entry = Entries(uesr_id=1, year=year, manufactured=manufactured, acquired=acquired, imported=imported, recycled=recycled, transferred=transferred, exported=exported, untracked=untracked)
+        db.session.add(new_entry)
+        db.session.commit()
+        return redirect('home/forms-enrty.html')
+
+    else:
+        render_template('home/forms-entry.html')
+
+    return render_template('home/index.html', segment='index')
 
 @blueprint.route('/<template>')
 @login_required

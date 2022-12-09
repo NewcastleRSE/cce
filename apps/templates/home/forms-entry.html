@@ -33,59 +33,61 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<div class="card">
-						<div class="card-header">
-							<div class="card-title">Entry Form</div>
-						</div>
-						<div class="card-body">
-							<div class="row">
-								<div class="col-md-6 col-lg-4">
-									<div class="form-group">
-										<label for="exampleFormControlSelect1">Year</label>
-										<select class="form-control" id="exampleFormControlSelect1">
-											<option>2021</option>
-											<option>2022</option>
-											<option>2023</option>
-											<option>2024</option>
-											<option>2025</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Manufactured</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0">
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Acquired</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0">
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Imported</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0">
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Recycled</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0">
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Transferred</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0">
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Exported</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0">
-									</div>
-									<div class="form-group">
-										<label for="defaultInput">Untracked</label>
-										<input type="text" class="form-control form-control" id="defaultInput" placeholder="0" disabled>
+					<form action='/createEntry' method="post">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Entry Form</div>
+							</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-6 col-lg-4">
+										<div class="form-group">
+											<label for="yearSelect">Year</label>
+											<select class="form-control" id="yearSelect" value="{{ request.form['year'] }}">
+												<option>2021</option>
+												<option>2022</option>
+												<option>2023</option>
+												<option>2024</option>
+												<option>2025</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="manufacturedInput">Manufactured</label>
+											<input type="text" class="form-control form-control" id="manufacturedInput" placeholder="0" value="{{ request.form['manufactured'] }}">
+										</div>
+										<div class="form-group">
+											<label for="acquiredInput">Acquired</label>
+											<input type="text" class="form-control form-control" id="acquiredInput" placeholder="0" value="{{ request.form['acquired'] }}">
+										</div>
+										<div class="form-group">
+											<label for="importedInput">Imported</label>
+											<input type="text" class="form-control form-control" id="importedInput" placeholder="0" value="{{ request.form['imported'] }}">
+										</div>
+										<div class="form-group">
+											<label for="recycledInput">Recycled</label>
+											<input type="text" class="form-control form-control" id="recycledInput" placeholder="0" value="{{ request.form['recycled'] }}">
+										</div>
+										<div class="form-group">
+											<label for="transferredInput">Transferred</label>
+											<input type="text" class="form-control form-control" id="transferredInput" placeholder="0" value="{{ request.form['transferred'] }}">
+										</div>
+										<div class="form-group">
+											<label for="exportedInput">Exported</label>
+											<input type="text" class="form-control form-control" id="exportedInput" placeholder="0" value="{{ request.form['exported'] }}">
+										</div>
+										<div class="form-group">
+											<label for="untrackedInput">Untracked</label>
+											<input type="text" class="form-control form-control" id="untrackedInput" placeholder="0" value="{{ request.form['untracked'] }}" disabled>
+										</div>
 									</div>
 								</div>
 							</div>
+							<div class="card-action">
+								<button class="btn btn-success" type="submit">Submit</button>
+								<button class="btn btn-danger">Cancel</button>
+							</div>
 						</div>
-						<div class="card-action">
-							<button class="btn btn-success">Submit</button>
-							<button class="btn btn-danger">Cancel</button>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
