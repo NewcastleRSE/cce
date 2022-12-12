@@ -33,17 +33,17 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<form action='/createEntry' method="post">
-						<div class="card">
-							<div class="card-header">
-								<div class="card-title">Entry Form</div>
-							</div>
-							<div class="card-body">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Entry Form</div>
+						</div>
+						<div class="card-body">
+							<form action='/createEntry' method="post">
 								<div class="row">
 									<div class="col-md-6 col-lg-4">
 										<div class="form-group">
 											<label for="yearSelect">Year</label>
-											<select class="form-control" id="yearSelect" value="{{ request.form['year'] }}">
+											<select class="form-control" id="yearSelect" name="year">
 												<option>2021</option>
 												<option>2022</option>
 												<option>2023</option>
@@ -53,41 +53,41 @@
 										</div>
 										<div class="form-group">
 											<label for="manufacturedInput">Manufactured</label>
-											<input type="text" class="form-control form-control" id="manufacturedInput" placeholder="0" value="{{ request.form['manufactured'] }}">
+											<input type="text" class="form-control form-control" id="manufacturedInput" placeholder="0" name="manufactured" value="0">
 										</div>
 										<div class="form-group">
 											<label for="acquiredInput">Acquired</label>
-											<input type="text" class="form-control form-control" id="acquiredInput" placeholder="0" value="{{ request.form['acquired'] }}">
+											<input type="text" class="form-control form-control" id="acquiredInput" placeholder="0" name="acquired" value="0">
 										</div>
 										<div class="form-group">
 											<label for="importedInput">Imported</label>
-											<input type="text" class="form-control form-control" id="importedInput" placeholder="0" value="{{ request.form['imported'] }}">
+											<input type="text" class="form-control form-control" id="importedInput" placeholder="0" name="imported" value="0">
 										</div>
 										<div class="form-group">
 											<label for="recycledInput">Recycled</label>
-											<input type="text" class="form-control form-control" id="recycledInput" placeholder="0" value="{{ request.form['recycled'] }}">
+											<input type="text" class="form-control form-control" id="recycledInput" placeholder="0" name="recycled" value="0">
 										</div>
 										<div class="form-group">
 											<label for="transferredInput">Transferred</label>
-											<input type="text" class="form-control form-control" id="transferredInput" placeholder="0" value="{{ request.form['transferred'] }}">
+											<input type="text" class="form-control form-control" id="transferredInput" placeholder="0" name="transferred" value="0">
 										</div>
 										<div class="form-group">
 											<label for="exportedInput">Exported</label>
-											<input type="text" class="form-control form-control" id="exportedInput" placeholder="0" value="{{ request.form['exported'] }}">
+											<input type="text" class="form-control form-control" id="exportedInput" placeholder="0" name="exported" value="0">
 										</div>
 										<div class="form-group">
 											<label for="untrackedInput">Untracked</label>
-											<input type="text" class="form-control form-control" id="untrackedInput" placeholder="0" value="{{ request.form['untracked'] }}" disabled>
+											<input type="text" class="form-control form-control" id="untrackedInput" placeholder="0" name="untracked" disabled>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="card-action">
-								<button class="btn btn-success" type="submit">Submit</button>
-								<button class="btn btn-danger">Cancel</button>
-							</div>
+								<div class="card-action">
+									<button class="btn btn-success" type="submit">Submit</button>
+									<button class="btn btn-danger">Cancel</button>
+								</div>
+							</form>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
