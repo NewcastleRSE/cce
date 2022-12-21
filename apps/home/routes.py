@@ -40,7 +40,7 @@ def createEntry():
             return "There was an issue adding your entry"
 
     else:
-        render_template('forms-entry.html')
+        render_template('home/forms-entry.html')
 
     return render_template('home/index.html', segment='index')
 
