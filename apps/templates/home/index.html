@@ -81,7 +81,7 @@
 						</div>
 						<div class="card-body">
 							<div class="chart-container" style="min-height: 375px">
-								<img src="/static/assets/img/circular-chemical-economy-diagram.png" style="height:100%;width:auto">
+								<img src="/static/assets/img/Simplified CCE Diagram.png" style="height:auto;width:100%">
 							</div>
 							<div id="myChartLegend"></div>
 						</div>
@@ -559,21 +559,32 @@
 		var mytotalIncomeChart = new Chart(totalIncomeChart, {
 			type: 'bar',
 			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				labels: ["2021", "2022", "2023", "2024", "2025"],
 				datasets : [{
-					label: "Total Income",
+					label: "Manufactured",
 					backgroundColor: '#ff9e27',
 					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+					data: [100, 110, 120, 110, 105],
+				},{
+					label: "Exported",
+					backgroundColor: '#45b6fe',
+					borderColor: 'rgb(23, 125, 225)',
+					data: [10, 20, 30, 40, 50]
 				}],
 			},
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
 				legend: {
-					display: false,
+					display: true,
 				},
 				scales: {
+					x: {
+						stacked: true,
+					},
+					y: {
+						stacked: true,
+					},
 					yAxes: [{
 						ticks: {
 							display: false //this will remove only the label

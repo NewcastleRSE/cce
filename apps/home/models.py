@@ -9,13 +9,12 @@ class Entries(db.Model):
     user_id = db.Column(db.Integer, nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     year = db.Column(db.Integer, nullable=False)
-    manufactured = db.Column(db.Integer, nullable=False)
-    acquired = db.Column(db.Integer, nullable=False)
-    imported = db.Column(db.Integer, nullable=False)
-    recycled = db.Column(db.Integer, nullable=False)
-    untracked = db.Column(db.Integer, nullable=False)
-    transferred = db.Column(db.Integer, nullable=False)
     exported = db.Column(db.Integer, nullable=False)
+    imported = db.Column(db.Integer, nullable=False)
+    manufactured = db.Column(db.Integer, nullable=False)
+    recycled = db.Column(db.Integer, nullable=False)
+    waste = db.Column(db.Integer, nullable=False)
+    
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

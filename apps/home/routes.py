@@ -4,8 +4,8 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from apps.home import blueprint
-from flask import render_template, request, redirect
-from flask_login import login_required
+from flask import render_template, request, redirect, session
+from flask_login import login_required, current_user
 from jinja2 import TemplateNotFound
 from apps.authentication.models import Users
 from apps.home.models import Entries, Transfers
@@ -81,6 +81,10 @@ def route_template(template):
         users = Users.query.all()
         entries = Entries.query.all()
         transfers = Transfers.query.all()
+        print(current_user)
+        this_user = Users.query.filter_by(username=str(current_user)).first_or_404()
+        print(this_user)
+        print(this_user.type)
 
         # Serve the file (if exists) from app/templates/home/FILE.html
         if template.endswith('tables-users.html'):
@@ -89,6 +93,8 @@ def route_template(template):
             return render_template("home/" + template, segment=segment, data=entries)
         elif template.endswith('tables-transfers.html'):
             return render_template("home/" + template, segment=segment, data=transfers)
+        elif template.endswith('forms-entry.html'):
+            return render_template("home/" + template, segment=segment, user=this_user)
         else:
             return render_template("home/" + template, segment=segment)
 

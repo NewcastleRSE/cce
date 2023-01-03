@@ -28,7 +28,7 @@ class CreateAccountForm(FlaskForm):
                         validators=[DataRequired()])
     type = SelectField('Type',
                         id='type_create',
-                        choices=['Manufacturer', 'Recycler'],
+                        choices=['Manufacturer', 'Recycler', 'Observer'],
                         validators=[DataRequired()])
     email = StringField('Email',
                       id='email_create',
